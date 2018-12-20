@@ -1,0 +1,8 @@
+.DS_Store
+*.log
+node_modules
+bower_components
+*.node
+*.orig
+_favicon
+_dist_favicon

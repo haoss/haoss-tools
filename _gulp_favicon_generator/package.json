@@ -1,0 +1,14 @@
+{
+  "name": "faviconGenerator",
+  "description": "project description",
+  "version": "1.0.0",
+  "homepage": "",
+  "author": "Dmitriy Khristoev <info@websource.in.ua> (http://websource.in.ua/)",
+  "scripts": {
+    "generate": "gulp favicon-1-generate"
+  },
+  "devDependencies": {
+    "gulp": "^4.0.0",
+    "gulp-real-favicon": "^0.3.1"
+  }
+}
