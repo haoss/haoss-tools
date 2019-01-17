@@ -14,7 +14,7 @@
   "devDependencies": {
     "bootstrap-sass": "^3.4.0",
     "bourbon": "^5.1.0",
-    "bourbon-neat": "^3.0.0",
+    "bourbon-neat": "^3.0.1",
     "browser-sync": "^2.26.3",
     "emitty": "^1.4.0",
     "gulp": "^4.0.0",
@@ -27,6 +27,6 @@
     "gulp-sass": "^4.0.2",
     "gulp-sourcemaps": "^2.6.4",
     "gulp-tinypng": "^1.0.2",
-    "rimraf": "^2.6.2"
+    "rimraf": "^2.6.3"
   }
 }
