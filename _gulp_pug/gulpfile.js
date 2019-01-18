@@ -70,7 +70,7 @@ gulp.task('browser-sync', function () {
       baseDir: "./"
     },
     notify: false,
-    reloadDelay: 3000
+    // reloadDelay: 3000
   });
 });
 
