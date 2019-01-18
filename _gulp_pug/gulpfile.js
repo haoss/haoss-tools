@@ -5,8 +5,6 @@ const gulp = require('gulp'),
       pug = require('gulp-pug'),
       emitty = require('emitty').setup('_pug', 'pug'),
       plumber = require('gulp-plumber'),
-      bourbon = require('bourbon').includePaths,
-      neat = require('bourbon-neat').includePaths,
       browserSync = require('browser-sync'),
       sass = require('gulp-sass'),
       autoprefixer = require('gulp-autoprefixer'),
@@ -42,7 +40,7 @@ gulp.task('scss', function () {
     .pipe(plumber())
     .pipe(plugins.sourcemaps.init())
     .pipe(sass({
-      includePaths: [bourbon, neat, 'node_modules/bootstrap-sass/assets/stylesheets']
+
     }).on('error', sass.logError))
     .pipe(autoprefixer({
       browsers: ['last 2 versions'],
