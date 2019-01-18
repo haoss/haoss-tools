@@ -47,7 +47,7 @@ gulp.task('scss', function () {
       cascade: true
     }))
     .pipe(cleanCSS())
-    .pipe(rename('main.min.css'))
+    .pipe(rename('style.min.css'))
     .pipe(plugins.sourcemaps.write("/"))
     .pipe(gulp.dest('dist/css/'))
 });
