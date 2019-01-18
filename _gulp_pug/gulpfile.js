@@ -15,7 +15,8 @@ const gulp = require('gulp'),
       cleanCSS = require('gulp-clean-css'),
       TINYPNG_API = "GuAIy8BmW79-zVDoYRzRR_9eVe-QnhlN",
       tinypng = require('gulp-tinypng'),
-      rimraf = require('rimraf')
+      rimraf = require('rimraf'),
+      rename = require('gulp-rename')
 ;
 
 // Pug
@@ -36,8 +37,8 @@ gulp.task('pug', () =>
 );
 
 // Sass
-gulp.task('sass', function () {
-  return gulp.src('_sass/main.sass')
+gulp.task('scss', function () {
+  return gulp.src('_scss/main.scss')
     .pipe(plumber())
     .pipe(plugins.sourcemaps.init())
     .pipe(sass({
@@ -48,6 +49,7 @@ gulp.task('sass', function () {
       cascade: true
     }))
     .pipe(cleanCSS())
+    .pipe(rename('main.min.css'))
     .pipe(plugins.sourcemaps.write("/"))
     .pipe(gulp.dest('dist/css/'))
 });
@@ -82,7 +84,7 @@ gulp.task('watch', () => {
     .on('all', (event, filepath) => {
       global.emittyChangedFile = filepath;
     });
-  gulp.watch('_sass/**/*.sass', gulp.series('sass'));
+  gulp.watch('_scss/**/*.scss', gulp.series('scss'));
   gulp.watch('dist/js/*.js').on("change", browserSync.reload);
   gulp.watch('dist/css/*.css').on('change', browserSync.reload);
   gulp.watch('dist/*.html').on('change', browserSync.reload);
