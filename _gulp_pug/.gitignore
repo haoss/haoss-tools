@@ -6,5 +6,5 @@ bower_components
 _design
 *.node
 *.orig
-dist/css/main.css
-dist/css/main.css.map
+dist/css/style.min.css
+dist/css/style.min.css.map
