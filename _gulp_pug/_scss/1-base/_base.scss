@@ -1,4 +1,8 @@
-* {
+/* base */
+
+*,
+*:before,
+*:after {
   box-sizing: border-box;
 }  
 
@@ -141,6 +145,12 @@ a.link {
   &:active {
     text-decoration: none;
   }
+}
+
+img {
+  box-sizing: content-box;
+  display: inline-block;
+  vertical-align: middle;
 }
 
 .container {

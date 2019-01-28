@@ -11,10 +11,10 @@ const gulp = require('gulp'),
       sourcemaps = require('gulp-sourcemaps'),
       plugins = require('gulp-load-plugins')(),
       cleanCSS = require('gulp-clean-css'),
-      TINYPNG_API = "GuAIy8BmW79-zVDoYRzRR_9eVe-QnhlN",
       tinypng = require('gulp-tinypng'),
       rimraf = require('rimraf'),
-      rename = require('gulp-rename')
+      rename = require('gulp-rename'),
+      TINYPNG_API = "GuAIy8BmW79-zVDoYRzRR_9eVe-QnhlN"
 ;
 
 // Pug
@@ -56,7 +56,7 @@ gulp.task('scss', function () {
 gulp.task('tinypng', function () {
   return gulp.src('_img/tinypng/**/*.*')
     .pipe(tinypng(TINYPNG_API))
-    .pipe(gulp.dest('dist/img/tinypng/'))
+    .pipe(gulp.dest('dist/images/tinypng/'))
 });
 gulp.task('rimraf', function (cb) {
   rimraf('.gulp', cb);
