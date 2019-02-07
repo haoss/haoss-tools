@@ -1,16 +1,16 @@
-@import "1-base/normalize";
-@import "1-base/mixin";
-@import "1-base/variables";
-@import "1-base/font";
-@import "1-base/base";
+@import "1-base/_normalize.scss";
+@import "1-base/_mixin.scss";
+@import "1-base/_variables.scss";
+@import "1-base/_font.scss";
+@import "1-base/_base.scss";
 
-@import "2-layout/buttons";
-@import "2-layout/forms";
-@import "2-layout/menu";
-@import "2-layout/header";
-@import "2-layout/footer";
+@import "2-layout/_buttons.scss";
+@import "2-layout/_forms.scss";
+@import "2-layout/_menu.scss";
+@import "2-layout/_header.scss";
+@import "2-layout/_footer.scss";
 
-@import "3-modules/modules";
+@import "3-modules/_modules.scss";
 
-@import "4-utils/clear";
-@import "4-utils/media-queries";
+@import "4-utils/_clear.scss";
+@import "4-utils/_media-queries.scss";

@@ -40,6 +40,13 @@ input[type=submit] {
   outline: none;
 }
 
+label {
+  display: inline-block;
+  max-width: 100%;
+  margin-bottom: 5px;
+  font-weight: 700;
+}
+
 .form {
   &-group,
   &__group {
@@ -61,6 +68,10 @@ input[type=submit] {
     box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
     transition: all .35s;
   }
+  &-label,
+  &__label {
+    
+  }
 }
 
 textarea {
@@ -69,13 +80,6 @@ textarea {
     height: 150px;
     resize: none;
   }
-}
-
-label {
-  display: inline-block;
-  max-width: 100%;
-  margin-bottom: 5px;
-  font-weight: 700;
 }
 
 .has {

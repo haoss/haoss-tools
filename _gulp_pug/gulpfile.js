@@ -6,7 +6,7 @@ const gulp = require('gulp'),
       emitty = require('emitty').setup('_pug', 'pug'),
       plumber = require('gulp-plumber'),
       browserSync = require('browser-sync'),
-      sass = require('gulp-sass'),
+      scss = require('gulp-sass'),
       autoprefixer = require('gulp-autoprefixer'),
       sourcemaps = require('gulp-sourcemaps'),
       plugins = require('gulp-load-plugins')(),
@@ -14,6 +14,7 @@ const gulp = require('gulp'),
       tinypng = require('gulp-tinypng'),
       rimraf = require('rimraf'),
       rename = require('gulp-rename'),
+      wait = require('gulp-wait2'),
       TINYPNG_API = "GuAIy8BmW79-zVDoYRzRR_9eVe-QnhlN"
 ;
 
@@ -37,11 +38,12 @@ gulp.task('pug', () =>
 // Sass
 gulp.task('scss', function () {
   return gulp.src('_scss/main.scss')
+    .pipe(wait(1500))
     .pipe(plumber())
     .pipe(plugins.sourcemaps.init())
-    .pipe(sass({
+    .pipe(scss({
 
-    }).on('error', sass.logError))
+    }).on('error', scss.logError))
     .pipe(autoprefixer({
       browsers: ['last 2 versions'],
       cascade: true
