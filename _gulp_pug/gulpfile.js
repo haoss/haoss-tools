@@ -26,7 +26,7 @@ gulp.task('pug', () =>
         .pipe(plumber())
         .pipe(gulpif(global.watch, emitty.filter(global.emittyChangedFile)))
         .pipe(pug({
-          pretty: true
+          pretty: '    '
         }))
         .pipe(gulp.dest('dist'))
         .on('end', resolve)
