@@ -14,9 +14,13 @@ const gulp = require('gulp'),
       tinypng = require('gulp-tinypng'),
       rimraf = require('rimraf'),
       rename = require('gulp-rename'),
-      wait = require('gulp-wait2'),
-      TINYPNG_API = "GuAIy8BmW79-zVDoYRzRR_9eVe-QnhlN"
+      wait = require('gulp-wait2')
 ;
+
+// Ключ активации для оптимизации 500 бесплатных картинок в месяц на сайте https://tinypng.com/
+// Ключ зарегистрирован на почту haossut@gmail.com
+// Нужен новый ключ, регистрируется на другую (свою) почту 
+const TINYPNG_API = "GuAIy8BmW79-zVDoYRzRR_9eVe-QnhlN";
 
 // Pug
 gulp.task('pug', () =>
@@ -55,7 +59,7 @@ gulp.task('scss', function () {
 });
 
 // Tinypng
-gulp.task('tinypng', function () {
+gulp.task('tiny', function () {
   return gulp.src('_img/tinypng/**/*.*')
     .pipe(tinypng(TINYPNG_API))
     .pipe(gulp.dest('dist/images/tinypng/'))
@@ -63,7 +67,7 @@ gulp.task('tinypng', function () {
 gulp.task('rimraf', function (cb) {
   rimraf('.gulp', cb);
 });
-gulp.task('compress', gulp.series('tinypng', 'rimraf'));
+gulp.task('compress', gulp.series('tiny', 'rimraf'));
 
 // Static server
 gulp.task('browser-sync', function () {

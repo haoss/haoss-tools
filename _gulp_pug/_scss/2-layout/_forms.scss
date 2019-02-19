@@ -15,26 +15,17 @@ input, textarea {
   }
 }
 
-button,
-input,
-optgroup,
-select,
-textarea {
+button, input, optgroup, select, textarea {
   margin: 0;
   font: inherit;
   color: inherit;
   outline: none;
-  &:hover,
-  &:focus,
-  &:active {
+  &:hover,   &:focus, &:active {
     outline: none;
   }
 }
 
-button,
-html input[type=button],
-input[type=reset],
-input[type=submit] {
+button, input[type=button], input[type=reset], input[type=submit] {
   -webkit-appearance: button;
   cursor: pointer;
   outline: none;
@@ -48,12 +39,10 @@ label {
 }
 
 .form {
-  &-group,
-  &__group {
+  &-group, &__group {
     margin-bottom: 15px;
   }
-  &-control,
-  &__control {
+  &-control, &__control {
     display: block;
     width: 100%;
     height: 34px;
@@ -68,15 +57,13 @@ label {
     box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
     transition: all .35s;
   }
-  &-label,
-  &__label {
-    
+  &-label, &__label {
+    display: block;
   }
 }
 
 textarea {
-  &.form-control,
-  &.form__control {
+  &.form-control, &.form__control {
     height: 150px;
     resize: none;
   }

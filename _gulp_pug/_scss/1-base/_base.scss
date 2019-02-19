@@ -1,14 +1,7 @@
 /* base */
-
-*,
-*:before,
-*:after {
+*, *:before, *:after {
   box-sizing: border-box;
 }  
-
-body {
-  // -webkit-tap-highlight-color: $selection-color
-}
 
 // Basic Styles
 html {
@@ -17,8 +10,7 @@ html {
   font-size: 16px;
 }
 
-html,
-body {
+html, body {
   height: 100%;
   padding: 0;
   margin: 0;
@@ -35,63 +27,39 @@ body {
 }
 
 //  Typography
-.h1,
-.h2,
-.h3,
-.h4,
-.h5,
-.h6,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
   color: $primary-color;
   font-weight: bold;
   text-decoration: none;
   margin: 0 0 15px 0;
 }
-
-.h1,
-h1 {
+.h1, h1 {
   font-size: 21px;
   line-height: 1.05;
   letter-spacing: -1px;
   margin-bottom: 25px;
 }
-
-.h2,
-h2 {
+.h2, h2 {
   font-size: 18px;
   line-height: 1.14;
   margin-bottom: 20px;
 }
-
-.h3,
-h3 {
+.h3, h3 {
   font-size: 16px;
   line-height: 1.38;
 }
-
-.h4,
-h4 {
+.h4, h4 {
   font-size: 14px;
   line-height: 1.38;
 }
-
-.h5,
-h5 {
+.h5, h5 {
   font-size: 13px;
 }
-
-.h6,
-h6 {
+.h6, h6 {
   font-size: 12px;
 }
 
-.small,
-small {
+small, .small {
   font-size: 12px;
   line-height: 1.2;
 }
@@ -101,17 +69,11 @@ p {
   margin: 0 0 20px 0;
 }
 
-em,
-i,
-.em,
-.i {
+em, i, .em, .i {
   font-style: italic;
 }
 
-strong,
-b,
-.strong,
-.b {
+strong, b, .strong, .b {
   font-weight: bold;
 }
 
@@ -124,15 +86,12 @@ hr {
 }
 
 // Links
-a,
-.link {
+a, .link {
   color: $link-color;
   text-decoration: underline;
   outline: none;
   transition: color 0.35s, background 0.35s, border 0.35s;
-  &:hover,
-  &:focus,
-  &:active {
+  &:hover, &:focus, &:active {
     color: $link-color;
     text-decoration: none;
     outline: none;
@@ -140,14 +99,12 @@ a,
 }
 
 a.link {
-  &:hover,
-  &:focus,
-  &:active {
+  &:hover, &:focus, &:active {
     text-decoration: none;
   }
 }
 
-img {
+img, .img {
   box-sizing: content-box;
   display: inline-block;
   vertical-align: middle;
@@ -163,16 +120,13 @@ img {
 
 /* text align */
 .text {
-  &-center,
-  &--center {
+  &-center, &--center {
     text-align: center !important;
   }
-  &-left,
-  &--left {
+  &-left, &--left {
     text-align: left !important;
   }
-  &-right,
-  &--right {
+  &-right, &--right {
     text-align: right !important;
   }
 }
@@ -219,14 +173,12 @@ img {
 
 /* img */
 .img {
-  &-responsive,
-  &--responsive {
+  &-responsive, &--responsive {
     display: block;
     height: auto;
     max-width: 100%;
   }
-  &-round,
-  &--round {
+  &-round, &--round {
     border-radius: 50%;
   }
 }
@@ -266,8 +218,7 @@ ol li {
 /* no padding no margin */
 .no {
   &--p {
-      padding: 0 !important;
-    }
+    padding: 0 !important;
     &-top {
       padding-top: 0 !important;
     }
@@ -280,9 +231,9 @@ ol li {
     &-right {
       padding-right: 0 !important;
     }
+  }
   &--m {
-      margin: 0 !important;
-    }
+    margin: 0 !important;
     &-top {
       margin-top: 0 !important;
     }
@@ -295,12 +246,13 @@ ol li {
     &-right {
       margin-right: 0 !important;
     }
+  }    
   &--b {
-      background: none !important;
-    }
+    background: none !important;
     &-image {
       background-image: none !important;
     }
+  }    
   &--border {
     border: 0 !important;
   }
