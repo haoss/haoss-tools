@@ -14,13 +14,21 @@ const gulp = require('gulp'),
       tinypng = require('gulp-tinypng'),
       rimraf = require('rimraf'),
       rename = require('gulp-rename'),
-      wait = require('gulp-wait2')
+      wait = require('gulp-wait2'),
+      emailBuilder = require('gulp-email-builder')
 ;
 
 // Ключ активации для оптимизации 500 бесплатных картинок в месяц на сайте https://tinypng.com/
-// Ключ зарегистрирован на почту haossut@gmail.com
+// Ключ зарегистрирован на почту haoss_ut@mail.ru
 // Нужен новый ключ, регистрируется на другую (свою) почту 
 const TINYPNG_API = "GuAIy8BmW79-zVDoYRzRR_9eVe-QnhlN";
+
+gulp.task('emailBuilder', function() {
+  return gulp.src(['./dist/email.html'])
+    .pipe(emailBuilder().build())
+    .pipe(rename('email-inline.html'))
+    .pipe(gulp.dest('./dist/'));
+});
 
 // Pug
 gulp.task('pug', () =>
