@@ -141,6 +141,7 @@ function simpleForm(form, callback) {
       processData : false,
       success: function(response) {
         $(form).removeClass('ajax-waiting');
+        $(form).find("[type=submit]").prop("disabled", false);
         $(form).html($(response).find(form).html());
 
         if (typeof callback === 'function') {
@@ -150,6 +151,7 @@ function simpleForm(form, callback) {
     });
 
     $(form).addClass('ajax-waiting');
+    $(form).find("[type=submit]").prop("disabled", true);
 
     return false;
   });
