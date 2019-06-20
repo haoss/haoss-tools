@@ -9,7 +9,8 @@
     "html": "gulp pug",
     "css": "gulp scss",
     "compress": "gulp compress",
-    "gulp": "gulp"
+    "gulp": "gulp",
+    "email": "gulp emailBuilder"
   },
   "devDependencies": {
     "bootstrap": "^4.3.1",
