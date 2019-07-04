@@ -5,6 +5,7 @@
 1. после установки пакетов **npm run html** - произойдет компиляция всех файлов pug
 1. **npm run css** - произойдет компиляция всех файлов scss
 1. **npm run watch** - запуск gulp watch - автоматическое отслеживание изменений файлов pug, scss
+1. **npm run critical** - запуск gulp critical - создание критических стилей и добавление в шапку, подробнее [тут](https://web.dev/extract-critical-css/?ref=ewebdesign.com) 
 
 > PS **npm run gulp** - запуск локального сервера, с автоматической компиляцией pug, scss и перезагрузкой браузера 
 

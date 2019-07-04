@@ -15,7 +15,8 @@ const gulp = require('gulp'),
       rimraf = require('rimraf'),
       rename = require('gulp-rename'),
       wait = require('gulp-wait2'),
-      emailBuilder = require('gulp-email-builder')
+      emailBuilder = require('gulp-email-builder'),
+      critical = require('critical').stream
 ;
 
 // Ключ активации для оптимизации 500 бесплатных картинок в месяц на сайте https://tinypng.com/
@@ -86,6 +87,13 @@ gulp.task('browser-sync', function () {
     notify: false,
     // reloadDelay: 3000
   });
+});
+
+gulp.task('critical', function () {
+  return gulp.src('dist/*.html')
+    .pipe(critical({base: 'dist/', inline: true, css: ['dist/css/style.min.css']}))
+    .on('error', function(err) { log.error(err.message); })
+    .pipe(gulp.dest('dist/'));
 });
 
 // Your "watch" task
