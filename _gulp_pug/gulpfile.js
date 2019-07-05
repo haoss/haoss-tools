@@ -90,9 +90,14 @@ gulp.task('browser-sync', function () {
 });
 
 gulp.task('critical', function () {
-  return gulp.src('dist/*.html')
-    .pipe(critical({base: 'dist/', inline: true, css: ['dist/css/style.min.css']}))
+  return gulp.src('dist/index.html')
+    .pipe(critical({
+      base: 'dist/', 
+      inline: true, 
+      css: ['dist/css/style.min.css']
+    }))
     .on('error', function(err) { log.error(err.message); })
+    .pipe(rename('index-critical.html'))
     .pipe(gulp.dest('dist/'));
 });
 
