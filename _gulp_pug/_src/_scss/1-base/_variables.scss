@@ -1,3 +1,10 @@
+// :root {
+//   @include defineColorHSL(--color-primary, 0, 89%, 56%);
+// }
+// [data-theme="dark"] {
+//   @include defineColorHSL(--color-primary, 0, 100%, 56%);
+// }
+
 $primary-color: black;
 
 $link-color: blue;
