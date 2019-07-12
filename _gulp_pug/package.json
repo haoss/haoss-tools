@@ -34,5 +34,8 @@
     "normalize-scss": "^7.0.1",
     "rimraf": "^2.6.3"
   },
-  "dependencies": {}
+  "dependencies": {},
+  "browserslist": [
+    "last 2 version"
+  ]
 }

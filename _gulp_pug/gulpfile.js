@@ -58,8 +58,7 @@ gulp.task('scss', function () {
 
     }).on('error', scss.logError))
     .pipe(autoprefixer({
-      browsers: ['last 2 versions'],
-      cascade: true
+      cascade: false
     }))
     .pipe(cleanCSS())
     .pipe(rename('style.min.css'))
