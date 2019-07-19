@@ -5,10 +5,12 @@
   "homepage": "",
   "author": "Dmitriy Khristoev <info@websource.in.ua> (http://websource.in.ua/)",
   "scripts": {
-    "generate": "gulp favicon-1-generate"
+    "generate": "gulp favicon-1-generate",
+    "inject": "gulp favicon-2-inject-markups",
+    "update": "gulp favicon-3-check-for-update"
   },
   "devDependencies": {
-    "gulp": "^4.0.0",
+    "gulp": "^4.0.2",
     "gulp-real-favicon": "^0.3.2"
   }
 }
