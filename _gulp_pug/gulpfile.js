@@ -16,6 +16,8 @@ const gulp = require('gulp'),
       rename = require('gulp-rename'),
       wait = require('gulp-wait2'),
       emailBuilder = require('gulp-email-builder'),
+      fs = require('fs'),
+      realFavicon = require ('gulp-real-favicon'),
       critical = require('critical').stream
 ;
 
@@ -98,6 +100,65 @@ gulp.task('critical', function () {
     .on('error', function(err) { log.error(err.message); })
     .pipe(rename('index-critical.html'))
     .pipe(gulp.dest('dist/'));
+});
+
+// File where the favicon markups are stored
+var FAVICON_DATA_FILE = 'faviconData.json';
+
+gulp.task('favicon-1-generate', function(done) {
+  realFavicon.generateFavicon({
+    masterPicture: './_favicon/favicon.png',
+    dest: './dist/favicon/',
+    iconsPath: './favicon/',
+    design: {
+      ios: {
+        pictureAspect: 'noChange'
+      },
+      desktopBrowser: {},
+      windows: {
+        pictureAspect: 'noChange',
+        backgroundColor: '#da532c',
+        onConflict: 'override'
+      },
+      androidChrome: {
+        pictureAspect: 'noChange',
+        themeColor: '#ffffff',
+        manifest: {
+          name: 'projectName',
+          display: 'browser',
+          orientation: 'notSet',
+          onConflict: 'override'
+        }
+      },
+      safariPinnedTab: {
+        pictureAspect: 'blackAndWhite',
+        threshold: 53.90625,
+        themeColor: '#5bbad5'
+      }
+    },
+    settings: {
+      scalingAlgorithm: 'Mitchell',
+      errorOnImageTooSmall: false
+    },
+    markupFile: FAVICON_DATA_FILE
+  }, function() {
+    done();
+  });
+});
+
+gulp.task('favicon-2-inject', function() {
+  gulp.src([ './dist/index.html' ])
+    .pipe(realFavicon.injectFaviconMarkups(JSON.parse(fs.readFileSync(FAVICON_DATA_FILE)).favicon.html_code))
+    .pipe(gulp.dest('./dist/'));
+});
+
+gulp.task('favicon-3-check-for-update', function(done) {
+  var currentVersion = JSON.parse(fs.readFileSync(FAVICON_DATA_FILE)).version;
+  realFavicon.checkForUpdates(currentVersion, function(err) {
+    if (err) {
+      throw err;
+    }
+  });
 });
 
 // Your "watch" task
