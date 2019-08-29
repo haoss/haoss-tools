@@ -17,8 +17,7 @@ const gulp = require('gulp'),
       wait = require('gulp-wait2'),
       emailBuilder = require('gulp-email-builder'),
       fs = require('fs'),
-      realFavicon = require ('gulp-real-favicon'),
-      critical = require('critical').stream
+      realFavicon = require ('gulp-real-favicon')
 ;
 
 // Ключ активации для оптимизации 500 бесплатных картинок в месяц на сайте https://tinypng.com/
@@ -88,18 +87,6 @@ gulp.task('browser-sync', function () {
     notify: false,
     // reloadDelay: 3000
   });
-});
-
-gulp.task('critical', function () {
-  return gulp.src('dist/index.html')
-    .pipe(critical({
-      base: 'dist/', 
-      inline: true, 
-      css: ['dist/css/style.min.css']
-    }))
-    .on('error', function(err) { log.error(err.message); })
-    .pipe(rename('index-critical.html'))
-    .pipe(gulp.dest('dist/'));
 });
 
 // File where the favicon markups are stored
