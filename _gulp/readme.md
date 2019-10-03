@@ -15,3 +15,11 @@
 1. pug - https://pugjs.org/api/getting-started.html
 1. конвертер css to scss - http://css2sass.herokuapp.com/
 1. конвертер html to pug - https://html2jade.org/
+
+# Рекомендуемые сторонние компоненты
+
+1. Слайдер простой: https://github.com/lyfeyaj/swipe
+1. Слайдер мощный: https://github.com/nolimits4web/swiper
+1. Тултипы: https://prevwong.github.io/drooltip.js/
+1. Прибитый блок: https://github.com/somewebmedia/hc-sticky
+1. Кастомный скролл: https://github.com/Grsmto/simplebar/issues
