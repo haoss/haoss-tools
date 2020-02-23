@@ -80,3 +80,7 @@
 //   @include border-radius(10px);
 //   @include arrow(up, 10px, #efefef);
 // }
+
+@function rem($size) {
+  @return $size / $root-font-size * 1rem;
+}
